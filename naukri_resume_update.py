@@ -18,8 +18,8 @@ chrome_options.add_argument("--headless")        # run without UI
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
-# Adjust ChromeDriver path if needed
-service = Service(r"C:\path\to\chromedriver.exe")  # Update this path to your ChromeDriver location
+# === ChromeDriver path ===
+service = Service(r"C:\Users\india\Downloads\chromedriver-win32\chromedriver.exe")
 
 # === Start Browser ===
 driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -42,6 +42,8 @@ try:
 
     # 5. Wait and upload resume
     upload_input = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@type='file']")))
+
+    # Send resume file path
     upload_input.send_keys(RESUME_PATH)
 
     # 6. Wait a few seconds to ensure upload completes
