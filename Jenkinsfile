@@ -29,16 +29,17 @@ pipeline {
         }
     }
 
-    post {
-        success {
-            echo "✅ Jenkins pipeline completed successfully."
-            mail bcc: '', body: "Resume upload script executed successfully.", 
-                 subject: "${EMAIL_SUBJECT_SUCCESS}", to: "${EMAIL_RECIPIENT}"
-        }
-        failure {
-            echo "❌ Jenkins pipeline failed. Check logs for errors."
-            mail bcc: '', body: "Resume upload script failed. Check Jenkins logs.", 
-                 subject: "${EMAIL_SUBJECT_FAIL}", to: "${EMAIL_RECIPIENT}"
-        }
+   post {
+    success {
+        echo "✅ Jenkins pipeline completed successfully."
+        mail bcc: '', body: "Resume upload script executed successfully.", 
+             subject: "${env.EMAIL_SUBJECT_SUCCESS}", to: "${env.EMAIL_RECIPIENT}"
     }
+    failure {
+        echo "❌ Jenkins pipeline failed. Check logs for errors."
+        mail bcc: '', body: "Resume upload script failed. Check Jenkins logs.", 
+             subject: "${env.EMAIL_SUBJECT_FAIL}", to: "${env.EMAIL_RECIPIENT}"
+    }
+}
+
 }
