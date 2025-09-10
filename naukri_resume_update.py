@@ -10,7 +10,7 @@ import time
 # === Configuration ===
 NAUKRI_USERNAME = os.environ.get("NAUKRI_USERNAME")
 NAUKRI_PASSWORD = os.environ.get("NAUKRI_PASSWORD")
-RESUME_PATH = os.environ.get("RESUME_PATH", r"C:\Users\india\Desktop\Devops\Resume\NAGA_PARAMESWARA_REDDY.pdf")
+RESUME_PATH = 'C:/Users/india/Desktop/Devops/Resume/NAGA_PARAMESWARA_REDDY.pdf'
 
 # === Headless Chrome Options ===
 chrome_options = Options()
