@@ -1,16 +1,13 @@
-
 pipeline {
     agent any
 
     environment {
-    NAUKRI_USERNAME = credentials('na_param')
-    NAUKRI_PASSWORD = credentials('na_pass')
-    RESUME_PATH = 'C:\\Users\\india\\Desktop\\Devops\\Resume\\NAGA_PARAMESWARA_REDDY.pdf'  // fixed
-    EMAIL_RECIPIENT = 'snagaparameswarareddy@gmail.com'
-    EMAIL_SUBJECT_SUCCESS = 'Naukri Resume Upload SUCCESS'
-    EMAIL_SUBJECT_FAIL = 'Naukri Resume Upload FAILED'
-}
-
+        NAUKRI_USERNAME = credentials('na_param')
+        NAUKRI_PASSWORD = credentials('na_pass')
+        RESUME_PATH = 'C:\\Users\\india\\Desktop\\Devops\\Resume\\NAGA_PARAMESWARA_REDDY.pdf'
+        EMAIL_RECIPIENT = 'snagaparameswarareddy@gmail.com'
+        EMAIL_SUBJECT_SUCCESS = 'Naukri Resume Upload SUCCESS'
+        EMAIL_SUBJECT_FAIL = 'Naukri Resume Upload FAILED'
     }
 
     triggers {
